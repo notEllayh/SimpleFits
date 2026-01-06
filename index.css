@@ -1,74 +1,107 @@
-.active-first{
-    display: block;
-    left: 0;
-    position: relative;
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
 }
 
-.active-promo1{
-    display: block;
-    animation: activePromo1 .6s ease-in-out;
-    left: 0;
-    position: relative;
+::-webkit-scrollbar-track {
+  background-color: #f1babd;
+  border-radius: 5px;
 }
 
-@keyframes active-promo1{
-    from{left: -200%}
-    to{left: 0}
+::-webkit-scrollbar-thumb {
+  background: #fa2d37;
+  border-radius: 5px;
 }
 
-.remove-promo1{
-    display: block;
-    animation: removePromo1 .6s ease-in-out;
+::-webkit-scrollbar-thumb:hover {
+  background: #ee0d19;
+}
+
+.active-first {
+  display: block;
+  left: 0;
+  position: relative;
+}
+
+.active-promo1 {
+  display: block;
+  animation: activePromo1 0.6s ease-in-out;
+  left: 0;
+  position: relative;
+}
+
+@keyframes active-promo1 {
+  from {
     left: -200%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+  }
+  to {
+    left: 0;
+  }
 }
 
-@keyframes remove-promo1{
-    from{left: 50%;}
-    to{left: -200%;}
+.remove-promo1 {
+  display: block;
+  animation: removePromo1 0.6s ease-in-out;
+  left: -200%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
 
+@keyframes remove-promo1 {
+  from {
+    left: 50%;
+  }
+  to {
+    left: -200%;
+  }
 }
 
 /* Slider Two */
-.active-promo2{
-    display: block;
-    animation: activePromo2 .6s ease-in-out;
-    left: 0;
-    position: relative;
+.active-promo2 {
+  display: block;
+  animation: activePromo2 0.6s ease-in-out;
+  left: 0;
+  position: relative;
 }
 
-@keyframes active-promo2{
-    from{left: 200%}
-    to{left: 0}
-}
-
-.remove-promo2{
-    display: block;
-    animation: removePromo2 .6s ease-in-out;
+@keyframes active-promo2 {
+  from {
     left: 200%;
-    position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+  }
+  to {
+    left: 0;
+  }
 }
 
-@keyframes remove-promo2{
-    from{left: 50%;}
-    to{left: 200%;}
-} 
+.remove-promo2 {
+  display: block;
+  animation: removePromo2 0.6s ease-in-out;
+  left: 200%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
 
+@keyframes remove-promo2 {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 200%;
+  }
+}
 
 .swiper-button-prev,
 .swiper-button-next {
-    color: black;
-    max-height: 30px;
-    max-width: 30px;
- } 
+  color: black;
+  max-height: 30px;
+  max-width: 30px;
+}
 
-.swiper-button-prev:hover, 
-.swiper-button-next:hover{
-    color: gray;
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  color: gray;
 }
