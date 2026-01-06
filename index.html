@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="src/output.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="" type="image/x-icon" />
+    <link
+      href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- Google Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=menu"
+    />
+    <!-- Font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>SimpleFits | Official Online Store | Menswear & Womenswear</title>
+  </head>
+  <body class="text-[#333]">
+    <!-- NavBar -->
+    <header>
+      <nav
+        class="fixed top-0 left-0 w-full py-4 px-8 bg-[#fff] shadow-sm flex justify-between items-center z-10"
+      >
+        <a href="index.html" class="text-[25px] text-[#333] font-medium italic"
+          >Simple<span class="text-red-500">Fits.</span></a
+        >
+        <div class="hidden md:flex items-center space-x-5">
+          <a href=""><i class="ri-search-line text-[25px]"></i></a>
+          <a href="register.html"><i class="ri-user-line text-[25px]"></i></a>
+          <a href=""><i class="ri-heart-2-line text-[25px]"></i></a>
+          <a href="cart.html" class=""
+            ><i class="ri-shopping-bag-line text-[25px] text-red-500"></i
+          ></a>
+        </div>
+
+        <div class="md:hidden items-center space-x-4">
+          <i
+            class="ri-menu-line text-[25px] text-red-500 font-bold"
+            id="sidenavOpen"
+            onclick="showSidenav()"
+          ></i>
+          <i
+            class="ri-close-large-line text-[25px] text-red-500 font-bold"
+            id="sidenavClose"
+            onclick="hideSidenav()"
+          ></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- SideBar -->
+    <aside
+      id="sidenav"
+      class="sidenav bg-black text-white text-[18px] fixed w-full h-full left-0 shadow p-5 md:hidden hidden"
+    >
+      <div>
+        <ul class="flex flex-col mt-20 space-y-6 px-4 font-medium">
+          <li class="border-b">
+            <a href="" class="hover:underline text-red-500">SALE</a>
+          </li>
+          <li class="border-b">
+            <a href="" class="hover:underline">New In</a>
+          </li>
+          <li class="border-b"><a href="" class="hover:underline">Men</a></li>
+          <li class="border-b"><a href="" class="hover:underline">Women</a></li>
+          <li class="border-b">
+            <a href="" class="hover:underline">Sports</a>
+          </li>
+          <li class="border-b">
+            <a href="" class="hover:underline">Brands</a>
+          </li>
+          <li class="border-b"><a href="" class="hover:underline">Shoes</a></li>
+          <li class="border-b">
+            <a href="" class="hover:underline">Discover</a>
+          </li>
+        </ul>
+
+        <div class="text-sm">
+          <ul class="flex flex-col mt-10 space-y-2 px-4">
+            <li>
+              <a href="#">Favorite</a>
+            </li>
+
+            <li>
+              <a href="#">Contact & Service</a>
+            </li>
+
+            <li>
+              <a href="#">Language <span class="font-semibold">GB</span></a>
+            </li>
+
+            <li>
+              <a href="#">Store locator</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <!-- End NavBar -->
+    <div class="mt-18 bg-black">
+      <ul
+        class="text-[16px] text-white hidden md:flex justify-center space-x-10 py-4 font-medium italic"
+      >
+        <li class="hover:underline cursor-pointer text-red-500">
+          <a href="">SALE</a>
+        </li>
+        <li class="hover:underline cursor-pointer">
+          <a href="">New In</a>
+        </li>
+        <li class="hover:underline cursor-pointer">
+          <a href="">Men</a>
+        </li>
+        <li class="hover:underline cursor-pointer">
+          <a href="">Women</a>
+        </li>
+        <li class="hover:underline cursor-pointer">
+          <a href="">Sports</a>
+        </li>
+        <li class="hover:underline cursor-pointer">
+          <a href="">Brands</a>
+        </li>
+        <li class="hover:underline cursor-pointer">
+          <a href="">Shoes</a>
+        </li>
+        <li class="hover:underline cursor-pointer">
+          <a href="">Discover</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Promo Banner -->
+    <div
+      class="bg-red-500 text-[#fff] text-[15px] flex justify-center py-1 px-1 italic"
+    >
+      <div class="promo-item active-first">
+        <div class="font-medium">30% OFF EVERYTHIHG!</div>
+      </div>
+
+      <div class="promo-item">
+        <div class="font-medium">FLASH - EXTRA SAVINGS ON TOP BRANDS</div>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <!-- <section
+      class="bg-center bg-no-repeat bg-[url('/brandImages/SimpleFits_hero.webp')] bg-blend-multiply bg-cover h-[600px] md:h-[800px] flex flex-col justify-center items-center text-center text-white px-4"
+    >
+  </section> -->
+
+    <section class="relative h-screen w-full overflow-hidden">
+      <video
+        class="absolute top-0 left-0 h-full w-full object-cover"
+        autoplay
+        loop
+        muted
+        playinline
+        src="videos/371857_Ironing Board Leaning Looking At Camera Blond_By_Yuval_Aloni_Artlist_HD.mp4"
+        type="video/mp4"
+      >
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <!-- New Arrivals Section -->
+    <section class="mt-15 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between">
+          <h2 class="mb-6 font-semibold text-2xl">
+            New Arrivals
+            <span class="block text-sm font-normal text-red-500"
+              >123+ products</span
+            >
+          </h2>
+
+          <a href="#">
+            <div class="flex items-center gap-2">
+              <p class="font-medium">See all</p>
+              <i class="ri-arrow-right-line text-red-500"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <a href="">
+              <img
+                src="carhartt/I035954_3I3_XX-ST-01.avif"
+                alt="L/S Harlin Shirt"
+                class="w-100 h-140"
+              />
+              <p class="mt-2 font-medium">L/S Harlin Shirt</p>
+              <span class="font-medium text-gray-500 text-sm"
+                >Harlin Check, Jupiter</span
+              >
+              <span class="block text-gray-500 font-medium">$90.00</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="">
+              <img
+                src="carhartt/I036038_482_XX-ST-01.avif"
+                alt="Clover Sweatshirt"
+                class="w-100 h-140"
+              />
+              <p class="mt-2 font-medium">Clover Sweatshirt</p>
+              <span class="font-medium text-gray-500 text-sm">Ash Heather</span>
+              <span class="block text-gray-500 font-medium">$90.00</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="">
+              <img
+                src="carhartt/I036256_01_01-ST-01.avif"
+                alt="Aden Chore Coat"
+                class="w-100 h-140"
+              />
+              <p class="mt-2 font-medium">Aden Chore Coat</p>
+              <span class="font-medium text-gray-500 text-sm">Blue, Rigid</span>
+              <span class="block text-gray-500 font-medium">$145.00</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="">
+              <img
+                src="carhartt/I027014_3IX_XX-ST-01.avif"
+                alt="Half Zip American Script Sweatshirt"
+                class="w-100 h-140"
+              />
+              <p class="mt-2 font-medium">
+                Half Zip American Script Sweatshirt
+              </p>
+              <span class="font-medium text-gray-500 text-sm">Oxide Red</span>
+              <span class="block text-gray-500 font-medium">$85.00</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="">
+              <img
+                src="carhartt/I030434_3IR_XX-ST-01.avif"
+                alt="S/S Pocket T-Shirt"
+                class="w-100 h-140"
+              />
+              <p class="mt-2 font-medium">S/S Pocket T-Shirt</p>
+              <span class="font-medium text-gray-500 text-sm">Iroko</span>
+              <span class="block text-gray-500 font-medium">$30.00</span>
+            </a>
+          </div>
+
+          <div>
+            <a href="">
+              <img
+                src="carhartt/I036179_3KV_XX-ST-01.avif"
+                alt="S/S Ezra Pocket T-Shirt"
+                class="w-100 h-140"
+              />
+              <p class="mt-2 font-medium text-sm">S/S Ezra Pocket T-Shirt</p>
+              <span class="font-medium text-gray-500"
+                >Ezra Stripe, Leaf / Wax</span
+              >
+              <span class="block text-gray-500 font-medium">$40.00</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filler Video -->
+    <section class="mt-15">
+      <div class="">
+        <video
+          src="videos/306645_Apartment Relaxing Thinking Chair_By_David_Tembleque_Artlist_HD.mp4"
+          autoplay
+          loop
+          muted
+          class="w-full h-screen object-cover"
+        ></video>
+      </div>
+    </section>
+
+    <!-- Discover the collection highlights Section -->
+    <section class="mt-15 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between">
+          <h1 class="mb-6 font-medium text-2xl">
+            Discover the collection highlights
+            <span class="block text-sm font-normal text-red-500"
+              >150+ products</span
+            >
+          </h1>
+
+          <a href="#">
+            <div class="flex items-center gap-2">
+              <p class="font-medium">See all</p>
+              <i class="ri-arrow-right-line text-red-500"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="product-list grid md:grid-cols-4 gap-6">
+          <div>
+            <img
+              src="discoverImages/I029919_3GD_GD-ST-01.avif"
+              alt="Flint Pant"
+              class="hover:scale-105"
+            />
+            <p class="font-medium mt-2">Flint Pant</p>
+            <p class="mt-2 text-sm">Velvet Green, Garment dyed</p>
+            <div class="space-x-2 mt-2">
+              <span class="text-red-500 font-medium">$35.00</span>
+              <span class="line-through">$50.00</span>
+              <span class="text-red-500">-30%</span>
+            </div>
+          </div>
+
+          <div class="cursor-pointer">
+            <img
+              src="discoverImages/I035954_3I2_XX-ST-01.avif"
+              alt="L/S Harlin Shirt"
+              class="hover:scale-105"
+            />
+            <p class="font-medium mt-2">L/S Harlin Shirt</p>
+            <p class="mt-2 text-sm">Harlin Check, Chili Pepper</p>
+            <div class="space-x-2 mt-2">
+              <span class="text-red-500 font-medium">$30.00</span>
+              <span class="line-through">$50.00</span>
+              <span class="text-red-500">-40%</span>
+            </div>
+          </div>
+
+          <div class="cursor-pointer">
+            <img
+              src="discoverImages/I035969_00E_XX-ST-01.avif"
+              alt="Adair Coat"
+              class="hover:scale-105"
+            />
+            <p class="font-medium mt-2">Adair Coat</p>
+            <p class="mt-2 text-sm">Black / Black</p>
+            <div class="space-x-2 mt-2">
+              <span class="text-red-500 font-medium">$38.50</span>
+              <span class="line-through">$55.00</span>
+              <span class="text-red-500">-30%</span>
+            </div>
+          </div>
+
+          <div class="cursor-pointer">
+            <img
+              src="discoverImages/I035970_3GD_XX-ST-01.avif"
+              alt="Kylan Liner"
+              class="hover:scale-105"
+            />
+            <p class="font-medium mt-2">Kylan Liner</p>
+            <p class="mt-2 text-sm">Velvet Green</p>
+            <div class="space-x-2 mt-2">
+              <span class="text-red-500 font-medium">$49.00</span>
+              <span class="line-through">$70.00</span>
+              <span class="text-red-500">-30%</span>
+            </div>
+          </div>
+
+          <div class="cursor-pointer">
+            <img
+              src="discoverImages/I035974_1LM_XX-ST-01.avif"
+              alt="Shepton Jacket"
+              class="hover:scale-105"
+            />
+            <p class="font-medium mt-2">Shepton Jacket</p>
+            <p class="mt-2 text-sm">Black / Natural</p>
+            <div class="space-x-2 mt-2">
+              <span class="text-red-500 font-medium">$9.00</span>
+              <span class="line-through">$15.00</span>
+              <span class="text-red-500">-40%</span>
+            </div>
+          </div>
+
+          <div class="cursor-pointer">
+            <img
+              src="discoverImages/I036055_1M5_XX-ST-01.avif"
+              alt="Hooded Alda Sweatshirt"
+              class="hover:scale-105"
+            />
+            <p class="font-medium mt-2">Hooded Alda Sweatshirt</p>
+            <p class="mt-2 text-sm">Brass / Black</p>
+            <div class="space-x-2 mt-2">
+              <span class="text-red-500 font-medium">$49.00</span>
+              <span class="line-through">$70.00</span>
+              <span class="text-red-500">-30%</span>
+            </div>
+          </div>
+
+          <div class="cursor-pointer">
+            <img
+              src="discoverImages/I036258_01_06-ST-01.avif"
+              alt="Cleveland Jacket"
+              class="hover:scale-105"
+            />
+            <p class="font-medium mt-2">Cleveland Jacket</p>
+            <p class="mt-2 text-sm">Blue, Stone washed</p>
+            <div class="space-x-2 mt-2">
+              <span class="text-red-500 font-medium">$39.00</span>
+              <span class="line-through">$65.00</span>
+              <span class="text-red-500">-40%</span>
+            </div>
+          </div>
+
+          <div class="cursor-pointer">
+            <img
+              src="discoverImages/I036308_HZ_01-ST-01.avif"
+              alt="OG Single Knee Short"
+              class="hover:scale-105"
+            />
+            <p class="font-medium mt-2">OG Single Knee Short</p>
+            <p class="mt-2 text-sm">Hamilton Brown, Rigid</p>
+            <div class="space-x-2 mt-2">
+              <span class="text-red-500 font-medium">$15.00</span>
+              <span class="line-through">$25.00</span>
+              <span class="text-red-500">-40%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop by Brands Section -->
+    <section class="mt-15 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between">
+          <h1 class="mb-6 font-medium text-2xl">Brands</h1>
+
+          <a href="#">
+            <div class="flex items-center gap-2">
+              <p class="font-medium">See all</p>
+              <i class="ri-arrow-right-line text-red-500"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_carhartt_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_newbalance_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+
+          <div>
+            <a href=""><img src="brandImages/nike.avif" alt="" class="" /></a>
+          </div>
+
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_drmartens_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_abercrombie_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_thenorthface_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footwear Section -->
+    <section class="mt-15 px-6">
+      <div class="max-w-7xl mx-auto">
+        <h1 class="mb-6 font-medium text-2xl">
+          Footwear
+          <span class="block text-sm font-normal text-red-500"
+            >221+ products</span
+          >
+        </h1>
+
+        <!-- Slider main container -->
+        <div class="swiper w-full h-full">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper cursor-pointer">
+            <!-- Slides -->
+            <div class="swiper-slide flex justify-center items-center">
+              <img
+                src="shoesImages/208875953-1-khaki.avif"
+                alt=""
+                class="block w-full h-full object-cover"
+              />
+              <p class="mt-2 text-[15px]">
+                Asics Gel-Venture 6 trainers in olive canvas
+              </p>
+              <p class="mt-3 font-medium">$95.00</p>
+            </div>
+
+            <div class="swiper-slide">
+              <img
+                src="shoesImages/208579450-1-grey.avif"
+                alt=""
+                class="block w-full h-full object-cover"
+              />
+              <p class="mt-2 text-[15px]">
+                Nike Air Max 90 Drift trainers in dark grey and khaki
+              </p>
+              <p class="mt-3 font-medium">$134.99</p>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="shoesImages/208604969-1-brown.avif" alt="" />
+              <p class="mt-2 text-[15px]">
+                adidas Originals Italia trainers in brown and white
+              </p>
+              <p class="mt-3 font-medium">$100.00</p>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="shoesImages/208140317-1-grey.avif" alt="" />
+              <p class="mt-2 text-[15px]">
+                New Balance 1906 unisex toggle trainers in grey and black
+              </p>
+              <p class="mt-3 font-medium">$150.00</p>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="shoesImages/208876058-1-black.avif" alt="" />
+              <p class="mt-2 text-[15px]">
+                Asics Gel-Kinetic Fluent trainers in black and pure silver
+              </p>
+              <p class="mt-3 font-medium">$180.00</p>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="shoesImages/208799097-1-lightgreen.avif" alt="" />
+              <p class="mt-2 text-[15px]">
+                Salomon XT-Whisper trainers in sharp green and iron
+              </p>
+              <p class="mt-3 font-medium">$140.00</p>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="shoesImages/208140130-1-black.avif" alt="" />
+              <p class="mt-2 text-[15px]">
+                New Balance M1000 unisex trainers in black and grey
+              </p>
+              <p class="mt-3 font-medium">$150.00</p>
+            </div>
+
+            <div class="swiper-slide">
+              <img src="shoesImages/208876017-1-white.avif" alt="" />
+              <p class="mt-2 text-[15px]">
+                Asics GT-2160 trainers in white and sun coral
+              </p>
+              <p class="mt-3 font-medium">$125.00</p>
+            </div>
+            ...
+          </div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- End Filler -->
+    <section class="mt-15 px-6 text-center">
+      <div class="max-w-7xl mx-auto">
+        <div>
+          <h3 class="text-2xl">
+            Sign up for the latest news from Simple<span class="text-red-500"
+              >Fits.</span
+            >
+          </h3>
+          <p class="my-8 text-[18px]">
+            Register to receive exclusive offers tailored to you, plus rewards
+            and promotions
+            <span class="block"
+              >before anyone else. Just select ‘YES’ on the next page and never
+              miss a thing.</span
+            >
+          </p>
+
+          <div class="flex space-x-5">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+              class="border w-full px-3 py-3 border-red-500 text-[17px]"
+            />
+            <button
+              class="cursor-pointer w-50 bg-red-500 text-white font-medium px-5 py-3 hover:bg-red-600 transition duration-300 ease-in-out"
+            >
+              <a href="">Sign me up</a>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script
+      src="https://kit.fontawesome.com/33cf3d94fc.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="product.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
