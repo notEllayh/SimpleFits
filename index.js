@@ -345,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
 }
 renderProducts([]);
 document.getElementById("products-grid").innerHTML =
-  `<p class="col-span-full text-center text-red-500">
+  `<p class="hidden md:flex md:justify-center md:text-center col-span-full text-red-500">
     Start typing to search products
   </p>`;
 
