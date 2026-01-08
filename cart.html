@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="index.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>My Cart | SimpleFits</title>
+    <script src="products.js" defer></script>
     <script src="index.js" defer></script>
   </head>
   <body>
@@ -205,26 +206,27 @@
 
     <!-- Main content -->
     <main>
+        <!-- My cart -->
       <section>
         <div class="max-w-7xl mx-auto px-6">
-          <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 ">
             <div class="order-2">
-              <h2 class="font-medium text-3xl mt-32 mb-8">My Cart</h2>
+              <h2 class="font-medium text-2xl mt-25 mb-8">My Cart</h2>
 
               <div id="cart-items"></div>
-              <p id="cart-empty">Your cart is empty.</p>
+              <p id="cart-empty" style="display:none;">Your cart is empty.</p>
               <h3 id="cart-total"></h3>
             </div>
 
-            <div class="order-1 md:order-2">
-                <h2 class="font-medium text-3xl mt-32 mb-8 px-6">
+            <div class="order-1 md:order-2 w-fit mx-auto">
+                <h2 class="font-medium text-2xl mt-25 mb-8 px-6">
                   Checkout as a guest
                 </h2>
 
-                <div class="space-y-3 mb-20 px-6">
+                <div class="flex flex-col space-y-2">
                 <div>
                   <button
-                    class="cursor-pointer w-full max-w-md mx-auto bg-red-500 text-white font-medium px-5 py-3 hover:bg-red-600 transition duration-300 ease-in-out"
+                    class="cursor-pointer w-100 max-w-md mx-auto bg-red-500 text-white font-medium px-5 py-3 hover:bg-red-600 transition duration-300 ease-in-out"
                   >
                     Proceed to Checkout
                   </button>
@@ -243,6 +245,51 @@
           </div>
         </div>
       </section>
+
+       <!-- End Filler -->
+    <section class="mt-20 px-6 text-center">
+      <div class="max-w-7xl mx-auto">
+        <div>
+          <h3 class="text-2xl font-medium italic">
+            Sign up for the latest news from Simple<span class="text-red-500"
+              >Fits.</span
+            >
+          </h3>
+          <p class="my-8 text-[18px]">
+            Register to receive exclusive offers tailored to you, plus rewards
+            and promotions
+            <span class="block"
+              >before anyone else. Just select ‘YES’ on the next page and never
+              miss a thing.</span
+            >
+          </p>
+
+          <!-- Subscriber email -->
+          <div class="flex space-x-5">
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              required
+              class="border w-full px-3 py-3 border-red-500 text-[17px]"
+            />
+            <button
+              class="cursor-pointer w-50 bg-red-500 text-white font-medium px-5 py-3 hover:bg-red-600 transition duration-300 ease-in-out"
+            >
+              <a href="">Sign me up</a>
+            </button>
+          </div>
+
+          <!-- Checkboxes -->
+          <div class="flex items-center gap-3 my-5 justify-center">
+            <label for="mens"></label>
+            <input type="checkbox" id="mens" name="yes" /> Men's
+
+            <label for="womens"></label>
+            <input type="checkbox" id="womens" name="no" /> Women's
+          </div>
+        </div>
+      </div>
+    </section>
     </main>
     <!-- Footer -->
     <footer class="px-6 bg-red-500 text-white italic">
@@ -287,7 +334,28 @@
       </div>
     </footer>
 
-    <script src="products.js"></script>
-    <script src="index.js"></script>
+     <script>
+      const sidenavOpen = document.getElementById("sidenavOpen");
+      const sidenavClose = document.getElementById("sidenavClose");
+      const sidenav = document.getElementById("sidenav");
+
+      // Side navigation
+      sidenavOpen.style.display = "block";
+      sidenavClose.style.display = "none";
+
+      function showSidenav() {
+        const sidenav = document.querySelector(".sidenav");
+        sidenavOpen.style.display = "none";
+        sidenavClose.style.display = "block";
+        sidenav.style.display = "flex";
+      }
+
+      function hideSidenav() {
+        const sidenav = document.querySelector(".sidenav");
+        sidenavOpen.style.display = "block";
+        sidenavClose.style.display = "none";
+        sidenav.style.display = "none";
+      }
+    </script>
   </body>
 </html>
