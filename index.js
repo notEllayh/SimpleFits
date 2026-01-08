@@ -316,6 +316,53 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCartItems();
   }
 
+
+  function renderProducts(productList) {
+  const grid = document.getElementById("products-grid");
+  if (!grid) return;
+
+  grid.innerHTML = "";
+
+  if (productList.length === 0) {
+    grid.innerHTML = `<p class="col-span-full text-center">No products found.</p>`;
+    return;
+  }
+
+  productList.forEach(product => {
+    grid.innerHTML += `
+    <div class="max-w-7xl mx-auto">
+    <div class="flex flex-col items-center p-4 border border-red-500 rounded hover:shadow-lg transition duration-300 ease-in-out">
+      <a href="product-details.html?id=${product.id}" class="block">
+        <img src="${product.image}" class="w-60 h-60 object-cover" />
+        <p class="mt-2 font-medium">${product.name}</p>
+        <span class="text-gray-500 text-sm">${product.brand}</span>
+        <span class="block text-gray-500 font-medium">$${product.price}</span>
+      </a>
+    </div>
+    </div>
+    `;
+  });
+}
+renderProducts([]);
+document.getElementById("products-grid").innerHTML =
+  `<p class="col-span-full text-center text-red-500">
+    Start typing to search products
+  </p>`;
+
+const searchInput = document.getElementById("search-input");
+
+if (searchInput) {
+  searchInput.addEventListener("input", e => {
+    const query = e.target.value.toLowerCase().trim();
+
+    const filteredProducts = products.filter(product =>
+      product.name.toLowerCase().includes(query) ||
+      product.brand.toLowerCase().includes(query)
+    );
+
+    renderProducts(filteredProducts);
+  });
+} 
 }); // DOMContentLoaded
 
 AOS.init();
