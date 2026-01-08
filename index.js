@@ -44,7 +44,6 @@ function topFunction() {
   });
 }
 
-
 // Promo
 //array = ["promo-item", "promo-item"];
 const promoItem = document.getElementsByClassName("promo-item");
@@ -75,7 +74,7 @@ const swiper = new Swiper('.swiper', {
   speed: 400, 
   spaceBetween: 20, 
   direction: 'horizontal',
-  slidesPerView: 4,
+  slidesPerView: 1,
   loop: false,
   freeMode: true, 
 
@@ -96,4 +95,12 @@ const swiper = new Swiper('.swiper', {
     480: { slidesPerView: 1},
   },
 
+});
+
+// Toggle user profile menu 
+const userProfile = document.getElementById("userProfile"); 
+const subMenu = document.getElementById("subMenu");
+
+userProfile.addEventListener("click", toggleMenu, () => {
+  subMenu.classList.toggle("open-menu"); 
 });

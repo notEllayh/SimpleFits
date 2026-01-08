@@ -46,7 +46,9 @@
         >
         <div class="hidden md:flex items-center space-x-5">
           <a href=""><i class="ri-search-line text-[25px]"></i></a>
-          <a href=""><i class="ri-user-line text-[25px]"></i></a>
+          <a href="" id="userProfile" onclick="toggleMenu()"
+            ><i class="ri-user-line text-[25px]"></i
+          ></a>
           <a href=""><i class="ri-heart-2-line text-[25px]"></i></a>
           <a href="cart.html" class=""
             ><i class="ri-shopping-bag-line text-[25px] text-red-500"></i
@@ -70,6 +72,75 @@
             id="sidenavClose"
             onclick="hideSidenav()"
           ></i>
+        </div>
+
+        <div
+          id="subMenu"
+          class="sub-menu-wrap absolute top-[85%] right-[10%] w-[320px] overflow-hidden hidden md:block"
+        >
+          <div class="sub-menu bg-white shadow-md p-[20px] m-[10px]">
+            <div class="user-info flex items-center space-x-4 mb-4">
+              <img
+                src="brandImages/diego-hernandez-MSepzbKFz10-unsplash.jpg"
+                alt=""
+                class="w-[45px] rounded-[100%] mr-[15px]"
+              />
+              <h2>Franklin Saint</h2>
+            </div>
+            <hr
+              class="border-1 border-gray-300 h-[1px] w-[100%] mt-[15px] mb-[10px]"
+            />
+
+            <a href="#" class="sub-menu-link flex items-center mt-[12px]">
+              <i class="ri-user-line mr-1.5 text-[20px] text-red-500"></i>
+              <p class="w-[100%]">Account info and address</p>
+              <i class="ri-arrow-right-line text-[18px]"></i>
+            </a>
+
+            <a href="#" class="sub-menu-link flex items-center mt-[12px]">
+              <i
+                class="ri-folder-history-line mr-1.5 text-[20px] text-red-500"
+              ></i>
+              <p class="w-[100%]">Order history</p>
+              <i class="ri-arrow-right-line text-[18px]"></i>
+            </a>
+
+            <a href="#" class="sub-menu-link flex items-center mt-[12px]">
+              <i
+                class="ri-loop-left-ai-fill mr-1.5 text-[20px] text-red-500"
+              ></i>
+              <p class="w-[100%]">Cashback</p>
+              <i class="ri-arrow-right-line text-[18px]"></i>
+            </a>
+
+            <a href="#" class="sub-menu-link flex items-center mt-[12px]">
+              <i class="ri-wallet-line mr-1.5 text-[20px] text-red-500"></i>
+              <p class="w-[100%]">Payment methods</p>
+              <i class="ri-arrow-right-line text-[18px]"></i>
+            </a>
+
+            <a href="#" class="sub-menu-link flex items-center mt-[12px]">
+              <i class="ri-lock-2-line mr-1.5 text-[20px] text-red-500"></i>
+              <p class="w-[100%]">Security and privacy</p>
+              <i class="ri-arrow-right-line text-[18px]"></i>
+            </a>
+
+            <a href="#" class="sub-menu-link flex items-center mt-[12px]">
+              <i
+                class="ri-chat-smile-3-line mr-1.5 text-[20px] text-red-500"
+              ></i>
+              <p class="w-[100%]">Customer service</p>
+              <i class="ri-arrow-right-line text-[18px]"></i>
+            </a>
+
+            <a href="#" class="sub-menu-link flex items-center mt-[12px]">
+              <i
+                class="ri-logout-circle-line mr-1.5 text-[20px] text-red-500"
+              ></i>
+              <p class="w-[100%]">Logout</p>
+              <i class="ri-arrow-right-line text-[18px]"></i>
+            </a>
+          </div>
         </div>
       </nav>
     </header>
@@ -209,7 +280,7 @@
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <a href="">
+            <a href="product-details.html?id=1" target="_blank">
               <img
                 src="carhartt/I035954_3I3_XX-ST-01.avif"
                 alt="L/S Harlin Shirt"
@@ -224,7 +295,7 @@
           </div>
 
           <div>
-            <a href="">
+            <a href="product-details.html?id=2" target="_blank">
               <img
                 src="carhartt/I036038_482_XX-ST-01.avif"
                 alt="Clover Sweatshirt"
@@ -237,7 +308,7 @@
           </div>
 
           <div>
-            <a href="">
+            <a href="product-details.html?id=3" target="_blank">
               <img
                 src="carhartt/I036256_01_01-ST-01.avif"
                 alt="Aden Chore Coat"
@@ -250,7 +321,7 @@
           </div>
 
           <div>
-            <a href="">
+            <a href="product-details.html?id=4" target="_blank">
               <img
                 src="carhartt/I027014_3IX_XX-ST-01.avif"
                 alt="Half Zip American Script Sweatshirt"
@@ -265,7 +336,7 @@
           </div>
 
           <div>
-            <a href="">
+            <a href="product-details.html?id=5" target="_blank">
               <img
                 src="carhartt/I030434_3IR_XX-ST-01.avif"
                 alt="S/S Pocket T-Shirt"
@@ -278,7 +349,7 @@
           </div>
 
           <div>
-            <a href="">
+            <a href="product-details.html?id=6" target="_blank">
               <img
                 src="carhartt/I036179_3KV_XX-ST-01.avif"
                 alt="S/S Ezra Pocket T-Shirt"
@@ -295,16 +366,70 @@
       </div>
     </section>
 
-    <!-- Filler Video -->
-    <section class="mt-15">
-      <div class="">
-        <video
-          src="videos/306645_Apartment Relaxing Thinking Chair_By_David_Tembleque_Artlist_HD.mp4"
-          autoplay
-          loop
-          muted
-          class="w-full h-screen object-cover"
-        ></video>
+    <!-- Shop by Brands Section -->
+    <section class="mt-15 px-6">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex justify-between">
+          <h1 class="mb-6 font-medium text-2xl">Brands</h1>
+
+          <a href="#">
+            <div class="flex items-center gap-2">
+              <p class="font-medium">See all</p>
+              <i class="ri-arrow-right-line text-red-500"></i>
+            </div>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_carhartt_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_newbalance_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+
+          <div>
+            <a href=""><img src="brandImages/nike.avif" alt="" class="" /></a>
+          </div>
+
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_drmartens_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_abercrombie_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+
+          <div>
+            <a href=""
+              ><img
+                src="brandImages/logo_thenorthface_870x500.avif"
+                alt=""
+                class=""
+            /></a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -328,7 +453,7 @@
         </div>
 
         <div class="product-list grid md:grid-cols-4 gap-6">
-          <div>
+          <div class="cursor-pointer">
             <img
               src="discoverImages/I029919_3GD_GD-ST-01.avif"
               alt="Flint Pant"
@@ -457,70 +582,16 @@
       </div>
     </section>
 
-    <!-- Shop by Brands Section -->
-    <section class="mt-15 px-6">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex justify-between">
-          <h1 class="mb-6 font-medium text-2xl">Brands</h1>
-
-          <a href="#">
-            <div class="flex items-center gap-2">
-              <p class="font-medium">See all</p>
-              <i class="ri-arrow-right-line text-red-500"></i>
-            </div>
-          </a>
-        </div>
-
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          <div>
-            <a href=""
-              ><img
-                src="brandImages/logo_carhartt_870x500.avif"
-                alt=""
-                class=""
-            /></a>
-          </div>
-
-          <div>
-            <a href=""
-              ><img
-                src="brandImages/logo_newbalance_870x500.avif"
-                alt=""
-                class=""
-            /></a>
-          </div>
-
-          <div>
-            <a href=""><img src="brandImages/nike.avif" alt="" class="" /></a>
-          </div>
-
-          <div>
-            <a href=""
-              ><img
-                src="brandImages/logo_drmartens_870x500.avif"
-                alt=""
-                class=""
-            /></a>
-          </div>
-
-          <div>
-            <a href=""
-              ><img
-                src="brandImages/logo_abercrombie_870x500.avif"
-                alt=""
-                class=""
-            /></a>
-          </div>
-
-          <div>
-            <a href=""
-              ><img
-                src="brandImages/logo_thenorthface_870x500.avif"
-                alt=""
-                class=""
-            /></a>
-          </div>
-        </div>
+    <!-- Filler Video -->
+    <section class="mt-15">
+      <div class="">
+        <video
+          src="videos/306645_Apartment Relaxing Thinking Chair_By_David_Tembleque_Artlist_HD.mp4"
+          autoplay
+          loop
+          muted
+          class="w-full h-screen object-cover"
+        ></video>
       </div>
     </section>
 
@@ -727,7 +798,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-    <script src="product.js"></script>
+    <script src="products.js"></script>
     <script src="index.js"></script>
   </body>
 </html>
